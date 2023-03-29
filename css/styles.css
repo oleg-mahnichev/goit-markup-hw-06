@@ -778,6 +778,7 @@ img {
   background: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
   position: relative;
+  transition: color 250ms var(--timing-function);
 }
 
 .closer-modal {
@@ -785,6 +786,12 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.modal-close-button:hover,
+.modal-close-button:focus,
+.modal-close-button:hover:active {
+  background-color: var(--pressed-btn-background);
+  fill: var(--cards-background);
 }
 .is-hidden {
   opacity: 0;
@@ -824,6 +831,14 @@ img {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 }
+.input-modal:focus {
+  outline: none;
+  border-color: var(--corporate-color);
+}
+.input-modal:focus + .input-modal-icon {
+  fill: var(--corporate-color);
+}
+
 .field-comment {
   width: 100%;
   height: 120px;
@@ -866,11 +881,72 @@ img {
   transform: translateY(-50%);
   fill: #2e2f42;
 }
-
-/* .modal-name {
-  margin-top: 14px;
+.privacy {
+  position: relative;
+  display: inline-block;
+  margin-left: var(--card-set-gap);
+}
+.text-checkbox {
+  width: 338px;
+  margin: left 8px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
   font-size: 12px;
   line-height: 1.33;
+  /* identical to box height, or 133% */
   letter-spacing: 0.04em;
-  color: #8e8f99;
-} */
+  color: #757575;
+}
+.privacy-politic-link {
+  color: var(--corporate-color);
+}
+
+.icon-checkbox {
+  position: absolute;
+  left: -24px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid#757575;
+  border-radius: 2px;
+}
+
+.checkbox:focus + .icon-checkbox {
+  border-color: var(--pressed-btn-background);
+}
+
+.checkbox:checked + .icon-checkbox {
+  background-color: var(--pressed-btn-background);
+  border-color: var(--pressed-btn-background);
+  background-image: url(../images/vector.svg);
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: center;
+}
+
+.modal-btn {
+  margin: auto;
+  margin-top: 40px;
+  min-width: 169px;
+  height: 56px;
+  background: var(--hero-btn-background);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  outline: none;
+  border: transparent;
+  padding: 16px 32px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: var(--hero-btn-text-color);
+  transition: background 250ms var(--timing-function);
+}
+.modal-btn:is(:hover, :focus) {
+  background: var(--pressed-btn-background);
+}

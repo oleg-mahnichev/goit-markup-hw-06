@@ -505,8 +505,8 @@
               <label for="name" class="modal-name">
               Name </label>
               <div class="input-svg-name">
-              <input class="modal-name-input" type="name" name="name" id="name" />
-               <svg class="person" width="18" height=18">
+              <input class="modal-name-input input-modal" type="name" name="name" id="name" />
+               <svg class="person input-modal-icon" width="18" height=18">
                 <use href="./images/sprite.svg#icon-person"></use>
               </svg>
             </div>
@@ -515,8 +515,8 @@
               <div class="form-field">
               <label for=phone class="modal-phone">Phone</label>
               <div class="input-svg-phone">
-              <input class="modal-phone-input" type="tel" name="Phone" id="phone"  />
-              <svg class="phone" width="18" height=18">
+              <input class="modal-phone-input input-modal " type="tel" name="Phone" id="phone"  />
+              <svg class="phone input-modal-icon" width="18" height=24">
                 <use href="./images/sprite.svg#icon-phone"></use>
               </svg></div>
               </div>
@@ -524,8 +524,8 @@
               <div class="form-field">
               <label for="email">Email</label>
               <div class="input-svg-email">
-              <input type="email" name="Email" id="email" />
-              <svg class="email" width="18" height=18">
+              <input class="input-modal modal-email-input" type="email" name="Email" id="email" />
+              <svg class="email input-modal-icon" width="18" height=24">
                 <use href="./images/sprite.svg#icon-email"></use>
               </svg></div>
               </div>
@@ -533,13 +533,17 @@
               <div class="form-field">
               <label for="comment">Comment</label>
               <!-- <input class="field-comment" type="text" name="comment" id="comment" placeholder="Text input"> -->
-              <textarea class="field-comment" name="comment" id="comment" placeholder="Text input"></textarea>
+              <textarea class="field-comment input-modal" name="comment" id="comment" placeholder="Text input"></textarea>
             </div>
   </form>
-  <label>
-       <input type="checkbox" name="privacy" /> I accept the terms and conditions of the <span class="link privacy-politic-link"><a href="">Privacy Policy</a></span> 
-  </label>
-  <button type="submit">Send</button>
+
+  <label class="privacy" for="privacy">
+           <input class="checkbox visually-hidden" type="checkbox" name="privacy" id="privacy" />
+           <span class="icon-checkbox"></span>
+           <span class="text-checkbox">I accept the terms and conditions of the <a class="privacy-politic-link" href="">Privacy Policy</a></span>
+            </label>
+
+  <button class="modal-btn btn" type="submit">Send</button>
 
           </div>
           
