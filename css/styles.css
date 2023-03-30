@@ -525,19 +525,17 @@ img {
 .subscribe-container {
   width: 453px;
   height: 80px;
-  margin-left: auto;
+  margin-left: 80px;
   padding: 0;
-  /* outline: 1px solid red; */
 }
 
 .subscribe-block {
-  width: 100%;
-  margin: auto;
+  display: flex;
+  width: 453px;
+  position: relative;
 }
 
 .subscribe-footer-title {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -554,6 +552,7 @@ img {
   padding-top: 8px;
   padding-bottom: 8px;
   background-color: var(--footer-background);
+  transition: border-color 250ms var(--timing-function);
 }
 .input-subscribe:focus {
   outline: none;
@@ -563,9 +562,12 @@ img {
 }
 
 .subscribe-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   margin-left: 18px;
   height: 40px;
-  min-width: 165px;
+  width: 165px;
   background-color: var(--corporate-color);
   border-radius: 4px;
   padding: 8px 24px;
@@ -574,7 +576,7 @@ img {
 }
 .subscribe-btn:focus,
 .subscribe-btn:hover {
-  background-color: var(--pressed-btn-background);
+  background: var(--pressed-btn-background);
   border: none;
 }
 
@@ -792,6 +794,7 @@ img {
 .modal-close-button:hover:active {
   background-color: var(--pressed-btn-background);
   fill: var(--cards-background);
+  outline: none;
 }
 .is-hidden {
   opacity: 0;
@@ -830,6 +833,14 @@ img {
   padding: 8px 38px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+}
+
+.input-modal {
+  transition: border-color 250ms var(--timing-function);
+}
+
+.input-modal-icon {
+  transition: fill 250ms var(--timing-function);
 }
 .input-modal:focus {
   outline: none;
@@ -910,6 +921,10 @@ img {
   height: 16px;
   border: 1.25px solid#757575;
   border-radius: 2px;
+}
+.icon-checkbox {
+  transition: border-color 250ms var(--timing-function),
+    background-color 250ms var(--timing-function);
 }
 
 .checkbox:focus + .icon-checkbox {
