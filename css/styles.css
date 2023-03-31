@@ -24,7 +24,7 @@
   --footer-soc-icon-background: #f4f4fd;
   --footer-soc-icon-hover: #31d0aa;
   --grad: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2));
-  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --timing-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* --iris: #4d5ae5;
   --ocean: #404bbf;
@@ -140,7 +140,7 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--title-text-color);
-  transition: color 250ms var(--timing-function);
+  transition: color --timing-function;
 }
 .header-item-link:hover,
 .header-item-link:focus {
@@ -186,7 +186,7 @@ img {
   letter-spacing: 0.02em;
 
   color: var(--text-color);
-  transition: color 250ms var(--timing-function);
+  transition: color var(--timing-function);
 }
 .contacts-item-link:hover,
 .contacts-item-link:focus {
@@ -242,7 +242,7 @@ img {
   color: var(--hero-btn-text-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  transition: background 250ms var(--timing-function);
+  transition: background var(--timing-function);
 }
 
 .hero-btn:hover,
@@ -387,7 +387,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background 250ms var(--timing-function);
+  transition: background var(--timing-function);
 }
 
 .team-soc-link:hover,
@@ -432,8 +432,7 @@ img {
   border: 1px solid var(--color-customers-icon);
   color: var(--color-customers-icon);
   border-radius: 4px;
-  transition: color 250ms var(--timing-function),
-    border-color 250ms var(--timing-function);
+  transition: color var(--timing-function), border-color var(--timing-function);
 }
 
 .customers-icon {
@@ -457,6 +456,7 @@ img {
   width: 100%;
   display: flex;
   align-items: baseline;
+  outline: 1px solid red;
 }
 
 .footer-logo {
@@ -510,7 +510,7 @@ img {
 
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
-  transition: background 250ms var(--timing-function);
+  transition: background var(--timing-function);
 }
 .soc-list-footer-icon {
   width: 24px;
@@ -522,17 +522,87 @@ img {
   background-color: var(--footer-soc-icon-hover);
 }
 /*-----------------------------SUBSCRIBE---  */
-.subscribe-container {
-  width: 453px;
+.subscribe-form {
+  margin-left: auto;
+}
+
+.subscribe-title {
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--footer-text-color);
+}
+
+.subscribe-input {
+  padding-left: 16px;
+  width: 264px;
+  height: 40px;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  background-color: var(--footer-background);
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  margin-top: 16px;
+}
+
+.subscribe-input::placeholder {
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.subscribe-input:focus {
+  outline: none;
+  border-color: var(--corporate-color);
+}
+
+.subsctibe-button {
+  position: relative;
+  margin-left: var(--card-set-gap);
+  padding: 8px 64px 8px 24px;
+
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  color: var(--footer-span-text-color);
+  background-color: var(--corporate-color);
+  border-radius: 4px;
+  border: none;
+
+  transition: background-color var(--timing-function);
+
+  cursor: pointer;
+}
+
+.subsctibe-button:is(:hover, :focus) {
+  background-color: var(--pressed-btn-background);
+}
+
+.subsctibe-button-icon {
+  position: absolute;
+  right: var(--card-set-gap);
+  width: 24px;
+  height: 24px;
+  top: 50%;
+
+  fill: var(--footer-span-text-color);
+
+  transform: translateY(-50%);
+}
+
+/* .subscribe-container {
   height: 80px;
   margin-left: 80px;
-  padding: 0;
+  outline: 1px solid red;
 }
 
 .subscribe-block {
+  outline: 1px solid red;
   display: flex;
-  width: 453px;
-  position: relative;
 }
 
 .subscribe-footer-title {
@@ -562,9 +632,6 @@ img {
 }
 
 .subscribe-btn {
-  position: absolute;
-  right: 0;
-  bottom: 0;
   margin-left: 18px;
   height: 40px;
   width: 165px;
@@ -593,7 +660,7 @@ img {
 
 .plane {
   margin-left: 16px;
-}
+} */
 /** ---------------------------------PORTFOLIO_PAGE--------------------------- */
 .projects-section {
   padding-top: 96px;
@@ -753,6 +820,8 @@ img {
   transition: opacity 250ms var(--timing-function),
     visibility 250ms var(--timing-function);
 }
+
+/***-------------------------MODAL WINDOW  */
 .modal {
   width: 408px;
   min-height: 576px;
@@ -773,6 +842,7 @@ img {
 
 .modal-close-button {
   display: block;
+  cursor: pointer;
   margin-left: auto;
   width: 24px;
   height: 24px;
@@ -813,23 +883,25 @@ img {
 .modal-form {
   width: 100%;
   margin-top: 16px;
+  outline: 1px solid red;
 }
 .form-field {
   display: flex;
   /* width: 100%; */
   flex-direction: column;
   margin-bottom: 8px;
+  outline: 1px solid tomato;
 }
 .form-field label {
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.04em;
   color: #8e8f99;
+  margin-bottom: 4px;
 }
 .form-field input {
   width: 100%;
   margin: 0;
-  margin-top: 4px;
   padding: 8px 38px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -849,12 +921,13 @@ img {
 .input-modal:focus + .input-modal-icon {
   fill: var(--corporate-color);
 }
-
+.comment {
+}
 .field-comment {
   width: 100%;
   height: 120px;
   margin: 0;
-  margin-top: 4px;
+
   padding: 8px 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -892,10 +965,11 @@ img {
   transform: translateY(-50%);
   fill: #2e2f42;
 }
-.privacy {
+.privacy-agriment {
   position: relative;
   display: inline-block;
   margin-left: var(--card-set-gap);
+  margin-bottom: var(--card-set-gap);
 }
 .text-checkbox {
   width: 338px;
@@ -942,7 +1016,6 @@ img {
 
 .modal-btn {
   margin: auto;
-  margin-top: 40px;
   min-width: 169px;
   height: 56px;
   background: var(--hero-btn-background);
