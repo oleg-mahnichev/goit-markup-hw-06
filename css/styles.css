@@ -456,7 +456,7 @@ img {
   width: 100%;
   display: flex;
   align-items: baseline;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 
 .footer-logo {
@@ -545,18 +545,20 @@ img {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   margin-top: 16px;
+  color: var(--footer-text-color);
 }
 
 .subscribe-input::placeholder {
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(247, 243, 243, 0.6);
 }
 
 .subscribe-input:focus {
   outline: none;
   border-color: var(--corporate-color);
+  color: var(--footer-text-color);
 }
 
 .subsctibe-button {
@@ -883,14 +885,12 @@ img {
 .modal-form {
   width: 100%;
   margin-top: 16px;
-  outline: 1px solid red;
 }
 .form-field {
   display: flex;
   /* width: 100%; */
   flex-direction: column;
   margin-bottom: 8px;
-  outline: 1px solid tomato;
 }
 .form-field label {
   font-size: 12px;
@@ -917,6 +917,7 @@ img {
 .input-modal:focus {
   outline: none;
   border-color: var(--corporate-color);
+  color: #2e2f42;
 }
 .input-modal:focus + .input-modal-icon {
   fill: var(--corporate-color);
@@ -966,12 +967,12 @@ img {
   fill: #2e2f42;
 }
 .privacy-agriment {
-  position: relative;
-  display: inline-block;
-  margin-left: var(--card-set-gap);
+  display: flex;
+  align-items: center;
   margin-bottom: var(--card-set-gap);
 }
 .text-checkbox {
+  margin-left: 8px;
   width: 338px;
   margin: left 8px;
   font-family: "Roboto";
@@ -988,9 +989,7 @@ img {
 }
 
 .icon-checkbox {
-  position: absolute;
-  left: -24px;
-  top: 0;
+  display: block;
   width: 16px;
   height: 16px;
   border: 1.25px solid#757575;
